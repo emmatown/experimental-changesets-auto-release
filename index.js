@@ -70,7 +70,8 @@ let spawn = (command, args) => {
     let { code } = await spawn("yarn", ["release"]);
 
     if (code !== 0) {
-      throw new Error("release was not successful");
+      console.error("release was not successful");
+      return process.exit(1);
     }
 
     await spawn("git", ["push", "--follow-tags", "gh-https", "master"]);
