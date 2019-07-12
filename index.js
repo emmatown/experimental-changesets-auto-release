@@ -67,7 +67,11 @@ let spawn = (command, args) => {
       `//registry.npmjs.org/:_authToken=${process.env.NPM_TOKEN}`
     );
 
-    await spawn("yarn", ["release"]);
+    let { code } = await spawn("yarn", ["release"]);
+
+    if (code !== 0) {
+      throw new Error("release was not successful");
+    }
 
     await spawn("git", ["push", "--follow-tags", "gh-https", "master"]);
 
