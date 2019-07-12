@@ -1,0 +1,14 @@
+{
+  "name": "@mitchellhamilton/experimental-changesets-auto-release",
+  "version": "0.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "bin": {
+    "experimental-changesets-auto-release": "index.js"
+  },
+  "repository": "https://github.com/mitchellhamilton/experimental-changesets-auto-release",
+  "dependencies": {
+    "@octokit/rest": "^16.28.3",
+    "spawndamnit": "^2.0.0"
+  }
+}
